@@ -187,20 +187,12 @@ y_train = np.asarray(train_data["y"])
 X_val = np.asarray(val_data.drop(columns=["y"]))
 y_val = np.asarray(val_data["y"])
 
-# deg = [3, 5, 7, 9]
-
-# for l in [0, 0.001, 0.1, 1]:
-#     plot_bias_variance_with_val(X_train, y_train, X_val, y_val, deg, l)
-
-
-test_data = pd.read_csv(r"Assignment-1\team2\Dataset3\dataset3_test.csv")
-X_test = np.asarray(test_data.drop(columns=["y"]))
-y_test = np.asarray(test_data["y"])
-
 deg = [3, 5, 7, 9]
-lambdas = [0, 0.001, 0.1, 1]
 
-# Print ERMS table
-erms_table = print_erms_table(X_train, y_train, X_val, y_val, X_test, y_test, deg, lambdas)
+for l in [0, 0.001, 0.1, 1]:
+    plot_bias_variance_with_val(X_train, y_train, X_val, y_val, deg, l)
+
+
+
 
 
